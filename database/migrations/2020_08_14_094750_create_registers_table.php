@@ -15,12 +15,12 @@ class CreateRegistersTable extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
-            $table->text('address');
-            $table->text('email');
-            $table->text('phone');
+            $table->string('name');
+            $table->string('address');
+            $table->string('email');
+            $table->string('phone');
             $table->integer('seatnumber');
-            $table->text('price');
+            $table->string('price');
             $table->timestamps();
         });
     }

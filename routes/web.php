@@ -21,9 +21,13 @@ Route::get('/football', function () {
     return view('register');
 });
 
-Route::Resource('/footballs','RegisterController',['names'=>[
+Route::Resource('/footballs','RegisterController',[
+    'names'=>[
     'index'=>'footballs',
-    'store'=>'footballs.store']
+    'store'=>'footballs.store',
+    'edit'=>'editview',
+    'update'=>'register.show',
+    ]
 ]
 );
 

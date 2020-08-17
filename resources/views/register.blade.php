@@ -35,8 +35,7 @@
     <label for="exampleInputPassword1">Price</label>
     <input type="text" class="form-control" id="exampleInputPassword1" name="price">
   </div>
-  <button type="submit" class="btn btn-primary">Register</button>&nbsp;
-  <button type="submit" class="btn btn-primary">Edit</button>&nbsp;
+  <button type="submit" class="btn btn-primary">Register</button>&nbsp;&nbsp;&nbsp;
   <button type="Reset" class="btn btn-primary">Cancle</button>
 </form>
 </div>

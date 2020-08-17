@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-<div class='col-sm-6 center'> 
+<div class='col-sm-6'> 
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -31,7 +31,7 @@
 <td>{{$value->phone}}</td>
 <td>{{$value->seatnumber}}</td>
 <td>{{$value->price}}</td>
-<td><a href="resources/view/EditView.blade.php".{{$value->id}}>Edit</a></a></td>
+<td><a href="{{Route('editview',$value->id)}}" class="btn btn-default btn-edit-post">Edit</a></td>
 </tr>
 @endforeach
   </tbody>

@@ -62,9 +62,11 @@ class RegisterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request,$id)
     {
         //
+        $result=register::find($id);
+        return view ('EditShow',compact('result'));
     }
 
     /**
@@ -77,6 +79,15 @@ class RegisterController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $result=register::find($id);
+        $result->name=$request('name');
+        $result->address=$request('address');
+        $result->email=$request('email');
+        $result->phone=$request('phone');
+        $result->seatnumber=$request('seatnumber');
+        $result->price=$request('price');
+        $result->save();
+        return redirect()->route('register');
     }
 
     /**

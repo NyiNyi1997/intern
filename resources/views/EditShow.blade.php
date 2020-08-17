@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Register</title>
+    <title>Edit</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
 </head>
 <body>
-<form method='post' action="{{url('football')}}">
+<form method='post' action="{{Route('register.show',$result->id)}}">
 @csrf
+@method('PUT')
 <div class='col-sm-6'> 
 <legend>Football Match Registration</legend>
+
 <div class="form-group">
     <label for="exampleInputEmail1">Name</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
+    <input type="text" name="name" value="{{$result->name}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  
   <div class="form-group">
     <label for="exampleInputEmail1">Address</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="address">
+    <input type="text"  name="address"  value="{{$result->address}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Email</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <label >Email</label>
+    <input type="email" name="email"  value="{{$result->email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   <div class="form-group">
-    <label for="exampleInputPassword1">Phone</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="phone">
+    <label >Phone</label>
+    <input type="text" name="phone"  value="{{$result->phone}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Seat Number</label>
-    <input type="number" class="form-control" id="exampleInputPassword1" name="seatnumber">
+    <label>Seat Number</label>
+    <input type="number" name="seatnumber" value="{{$result->seatnumber}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Price</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" name="price">
+    <label>Price</label>
+    <input type="text" name="price" value="{{$result->price}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
-  <button type="submit" class="btn btn-primary">Register</button>&nbsp;
-  <button type="submit" class="btn btn-primary">Edit</button>&nbsp;
+  <button type="submit" class="btn btn-primary">Update</button>&nbsp;
   <button type="Reset" class="btn btn-primary">Cancle</button>
 </form>
 </div>
